@@ -1,4 +1,4 @@
-import weather from '../api/weather';
+import { getProducts } from '../api/weather';
 import * as types from '../constants/ActionTypes';
 
 const URL = 'http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=75f972b80e26f14fe6c920aa6a85ad57&cnt=40';
@@ -19,7 +19,7 @@ const failList = () => ({
 export const fetchList = () => {
     return async (dispatch) => {
         dispatch(startList());
-        const response = await weather.getProducts(URL)
+        const response = await getProducts(URL)
         if(response && response.list) {
             dispatch(successList(response))
         } else {

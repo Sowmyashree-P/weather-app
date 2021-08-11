@@ -10,7 +10,8 @@ function Home() {
   const error = useSelector(state => state.error)
 
   useEffect(() => {
-    dispatch(fetchList())
+    dispatch(fetchList());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
   return (

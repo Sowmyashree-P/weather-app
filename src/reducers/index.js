@@ -11,7 +11,7 @@ const initialState = {
     degree: 'fahrenheit'
 }
 
-export default (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     switch (action.type) {
       case GET_WEATHER_INFO_START:
         return {
@@ -46,3 +46,4 @@ export default (state = initialState, action) => {
     }
   }
   
+  export default reducer;
